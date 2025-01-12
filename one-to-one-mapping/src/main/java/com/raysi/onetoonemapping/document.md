@@ -1,6 +1,4 @@
-Here's the content converted into Markdown format:
 
-```markdown
 # Understanding @OneToOne Mapping in Spring Boot with JPA
 
 Understanding `@OneToOne` mapping in Spring Boot with JPA requires a clear grasp of how relationships between entities are mapped in a database. Let’s break this down step by step.
@@ -12,7 +10,6 @@ The `@OneToOne` annotation in JPA is used to map a one-to-one relationship betwe
 ### Basic Structure
 
 #### Entity A
-
 ```java
 @Entity
 public class User {
