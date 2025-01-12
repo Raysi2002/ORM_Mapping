@@ -1,9 +1,6 @@
 package com.raysi.onetoonemapping.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,11 +14,14 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Employee {
     @Id
-    @GeneratedValue
-    private Long empoyeeId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long employeeId;
     private String name;
     @Email
     private String email;
-    @OneToOne
+//    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
+//    private Address address;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "addressCode")
     private Address address;
 }
