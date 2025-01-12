@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @SpringBootTest
@@ -35,6 +37,18 @@ class EmployeeRepositoryTest {
 
     @Test
     public void saveEmployees(){
+        Address address1 = Address.builder()
+                .pinCode("6238423")
+                .city("Rjy")
+                .state("AP")
+                .country("India")
+                .build();
+        Address address2 = Address.builder()
+                .pinCode("239438")
+                .city("Munich")
+                .state("Munich")
+                .country("Germany")
+                .build();
 
     }
 
@@ -44,9 +58,9 @@ class EmployeeRepositoryTest {
         System.out.println(employee);
     }
 
-//    @Test
-//    public void fetchEmployees(){
-//        List<Employee> employees = employeeRepository.findAll();
-//        System.out.println(employees);
-//    }
+    @Test
+    public void fetchEmployees(){
+        List<Employee> employees = employeeRepository.findAll();
+        System.out.println(employees);
+    }
 }
