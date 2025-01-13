@@ -1,6 +1,5 @@
-Here is the content converted into Markdown format:
 
-# Understanding @OneToMany and @ManyToOne Relationships in Detail
+## Understanding @OneToMany and @ManyToOne Relationships in Detail
 
 The `@OneToMany` and `@ManyToOne` relationships in Hibernate/JPA are used to model real-world relationships between entities in a database. These relationships are fundamental in database design and understanding them deeply is crucial for mastering ORM (Object-Relational Mapping).
 
