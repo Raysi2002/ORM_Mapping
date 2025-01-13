@@ -15,6 +15,9 @@ public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long profileId;
+
+    // Bidirectional mapping: Profile is mapped by 'profile' field in User entity
+    // @JsonIgnore prevents infinite recursion during JSON serialization
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private User user;
