@@ -1,4 +1,4 @@
-package com.raysi.onetoonemapping.entity;
+package com.raysi.onetoonemapping.entity_unidirectional;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -19,9 +19,7 @@ public class Employee {
     private String name;
     @Email
     private String email;
-//    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
-//    private Address address;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "addressCode")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @JoinColumn(name = "address_code")
     private Address address;
 }

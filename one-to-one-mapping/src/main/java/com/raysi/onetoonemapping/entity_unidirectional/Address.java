@@ -1,4 +1,4 @@
-package com.raysi.onetoonemapping.entity;
+package com.raysi.onetoonemapping.entity_unidirectional;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
@@ -21,9 +21,5 @@ public class Address {
     private String city;
     private String state;
     private String country;
-//    @OneToOne
-//    @JoinColumn(name = "employee_id")
-//    private Employee employee;
-    @OneToOne(mappedBy = "address")
-    private Employee employee;
+
 }

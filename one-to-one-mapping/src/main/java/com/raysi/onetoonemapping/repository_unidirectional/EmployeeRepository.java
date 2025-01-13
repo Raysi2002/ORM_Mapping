@@ -1,6 +1,6 @@
-package com.raysi.onetoonemapping.repository;
+package com.raysi.onetoonemapping.repository_unidirectional;
 
-import com.raysi.onetoonemapping.entity.Employee;
+import com.raysi.onetoonemapping.entity_unidirectional.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
