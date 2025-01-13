@@ -49,6 +49,4 @@ class EmployeeRepositoryTest {
     public void deleteEmployee(){
         employeeRepository.deleteById(1L);
     }
-
-
 }
