@@ -18,7 +18,14 @@ public class Book {
     private String authorName;
 
     @ManyToOne()
-    @JoinColumn(name = "library_id")
+    @JoinColumn(name = "library_id", referencedColumnName = "libraryId")
     @JsonIgnore
     private Library library;
+
+    @Override
+    public String toString() {
+        return "Book Id: " + this.getBookId() +
+                "\nBook Name: " + this.getBookName() +
+                "\nAuthor Name: " + this.getAuthorName();
+    }
 }

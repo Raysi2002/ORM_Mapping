@@ -9,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class LibraryRepositoryTest {
     @Autowired
@@ -28,8 +26,14 @@ class LibraryRepositoryTest {
 
         Library library = Library.builder()
                 .libraryName("Ray's Learning")
-                .books(books)
                 .build();
+        library.addBooks(books);
         libraryRepository.save(library);
+    }
+
+    @Test
+    public void fetchBooks(){
+        List<Library> books = libraryRepository.findAll();
+        System.out.println(books);
     }
 }
