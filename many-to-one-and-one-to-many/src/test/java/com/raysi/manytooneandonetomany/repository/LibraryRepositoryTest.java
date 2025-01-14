@@ -36,4 +36,9 @@ class LibraryRepositoryTest {
         List<Library> books = libraryRepository.findAll();
         System.out.println(books);
     }
+
+    @Test
+    public void deleteBook(){
+        libraryRepository.deleteById(1L);
+    }
 }
