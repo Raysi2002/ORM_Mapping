@@ -17,13 +17,17 @@ public class Book {
     private String bookName;
     private String authorName;
 
-    @ManyToOne()
-    @JoinColumn(name = "library_id", referencedColumnName = "libraryId")
-    @JsonIgnore
+    @ManyToOne // Specifies the many-to-one relationship with Library.
+    @JoinColumn(
+            name = "library_id", // Name of the foreign key column in the Book table.
+            referencedColumnName = "libraryId" // References the primary key in the Library table.
+    )
+    @JsonIgnore // Prevents cyclic serialization issues during JSON serialization.
     private Library library;
 
     @Override
     public String toString() {
+        // Custom string representation of Book.
         return "Book Id: " + this.getBookId() +
                 "\nBook Name: " + this.getBookName() +
                 "\nAuthor Name: " + this.getAuthorName();
