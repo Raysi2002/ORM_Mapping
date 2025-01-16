@@ -37,4 +37,13 @@ class CourseRepositoryTest {
         Optional<Course> course = courseRepository.findById(1L);
         System.out.println(course.map(Course::debugInfo).orElse("Course not found"));
     }
+
+    @Test
+    public void deleteCourse(){
+        Course course = courseRepository.findById(2L).orElseThrow(RuntimeException :: new);
+        for(Student student : course.getStudents()){
+            student.getCourses().remove(course);
+        }
+        courseRepository.delete(course);
+    }
 }
